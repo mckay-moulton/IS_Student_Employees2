@@ -25,7 +25,7 @@ namespace IS_Student_Employees2.Controllers
               return View(await _context.Employee.ToListAsync());
         }
 
-        // GET: Employees/Details/5
+        // Employees Details 
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Employee == null)
