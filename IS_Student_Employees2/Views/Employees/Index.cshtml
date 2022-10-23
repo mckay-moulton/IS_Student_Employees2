@@ -1,0 +1,215 @@
+﻿@model IEnumerable<IS_Student_Employees2.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Stud_First)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stud_Last)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BYUID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.International)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Exp_Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Semester)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class_Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Empl_Record)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supervisor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hire_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pay_Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Last_Pay_Increase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Increase_Input_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pay_Increase_Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year_In_Program)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pay_Grad_Tuition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name_Change_Complete)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Terminated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Termination_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qualtrics_Survey_Sent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Submitted_Form)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Form_Submission_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Authorization_To_Work_Received)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Authorization_To_Work_Email_Sent_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BYU_Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stud_First)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stud_Last)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BYUID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.International)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Exp_Hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class_Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empl_Record)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Supervisor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hire_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pay_Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Last_Pay_Increase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Increase_Input_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pay_Increase_Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year_In_Program)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pay_Grad_Tuition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name_Change_Complete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Terminated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Termination_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qualtrics_Survey_Sent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Submitted_Form)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Form_Submission_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Authorization_To_Work_Received)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Authorization_To_Work_Email_Sent_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BYU_Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
