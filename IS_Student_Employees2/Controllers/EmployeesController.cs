@@ -20,10 +20,25 @@ namespace IS_Student_Employees2.Controllers
         }
 
         // GET: Employees
-        public async Task<IActionResult> Index()
+        //Index w/Search 
+        public async Task<IActionResult> Index(string searchString)
         {
-              return View(await _context.Employee.ToListAsync());
+            var employees = from m in _context.Employee
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                employees = employees.Where(s => s.Stud_Last!.Contains(searchString));
+            }
+
+            return View(await employees.ToListAsync());
         }
+        //OG Index 
+        //public async Task<IActionResult> Index()
+        //{
+
+        //      return View(await _context.Employee.ToListAsync());
+        //}
 
         // Employees Details 
         public async Task<IActionResult> Details(int? id)
