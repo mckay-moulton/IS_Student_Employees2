@@ -1,0 +1,10 @@
+﻿@*
+    ViewData["Title"] = "TAs";
+*@
+@model List<Employee>
+
+@{
+}
+@foreach (var item in Model) {
+    <p>@Html.DisplayFor(modelItem => item.Stud_First)</p>
+}

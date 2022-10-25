@@ -25,12 +25,13 @@ namespace IS_Student_Employees2.Controllers
         {
             var employees = from m in _context.Employee
                          select m;
+            //if the search bar is not empty, perform LINQ Filter, redirecting to same Index Page
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                employees = employees.Where(s => s.Stud_Last!.Contains(searchString));
+                employees = employees.Where(s => s.Stud_Last!.Contains(searchString)); 
             }
-
+            
             return View(await employees.ToListAsync());
         }
         //OG Index 
