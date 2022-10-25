@@ -1,32 +1,34 @@
-﻿using IS_Student_Employees2.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using IS_Student_Employees2.Data;
+using IS_Student_Employees2.Models;
 
 namespace IS_Student_Employees2.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IS_Student_Employees2Context _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IS_Student_Employees2Context context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult TAs()
         {
-            return View();
+            var ta = _context.Employee.Where(s => s.Position_Type == "TA").
+                ToList();
+            return View(ta);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }

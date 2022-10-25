@@ -10,38 +10,22 @@ using IS_Student_Employees2.Models;
 
 namespace IS_Student_Employees2.Controllers
 {
-    public class EmployeesController : Controller
+    public class Employees1Controller : Controller
     {
         private readonly IS_Student_Employees2Context _context;
 
-        public EmployeesController(IS_Student_Employees2Context context)
+        public Employees1Controller(IS_Student_Employees2Context context)
         {
             _context = context;
         }
 
-        // GET: Employees
-        //Index w/Search 
-        public async Task<IActionResult> Index(string searchString)
+        // GET: Employees1
+        public async Task<IActionResult> Index()
         {
-            var employees = from m in _context.Employee
-                         select m;
-            //if the search bar is not empty, perform LINQ Filter, redirecting to same Index Page
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                employees = employees.Where(s => s.Stud_Last!.Contains(searchString)); 
-            }
-            
-            return View(await employees.ToListAsync());
+              return View(await _context.Employee.ToListAsync());
         }
-        //OG Index 
-        //public async Task<IActionResult> Index()
-        //{
 
-        //      return View(await _context.Employee.ToListAsync());
-        //}
-
-        // Employees Details 
+        // GET: Employees1/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Employee == null)
@@ -59,13 +43,13 @@ namespace IS_Student_Employees2.Controllers
             return View(employee);
         }
 
-        // GET: Employees/Create
+        // GET: Employees1/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Employees/Create
+        // POST: Employees1/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -81,7 +65,7 @@ namespace IS_Student_Employees2.Controllers
             return View(employee);
         }
 
-        // GET: Employees/Edit/5
+        // GET: Employees1/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Employee == null)
@@ -97,7 +81,7 @@ namespace IS_Student_Employees2.Controllers
             return View(employee);
         }
 
-        // POST: Employees/Edit/5
+        // POST: Employees1/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -132,7 +116,7 @@ namespace IS_Student_Employees2.Controllers
             return View(employee);
         }
 
-        // GET: Employees/Delete/5
+        // GET: Employees1/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Employee == null)
@@ -150,7 +134,7 @@ namespace IS_Student_Employees2.Controllers
             return View(employee);
         }
 
-        // POST: Employees/Delete/5
+        // POST: Employees1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
