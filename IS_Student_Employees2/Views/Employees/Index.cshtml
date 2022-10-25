@@ -9,7 +9,8 @@
 <p>
     <button><a asp-action="Create">Create New</a></button>
 </p>
-<table class="table">
+<div class="text-center">
+<table class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>
@@ -105,6 +106,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.BYU_Name)
             </th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -205,11 +207,16 @@
                 @Html.DisplayFor(modelItem => item.BYU_Name)
             </td>
             <td>
-                    <button><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></button>
-                    <button><a asp-action="Details" asp-route-id="@item.Id">Details</a></button>
-                    <button><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></button>
+                <button><a asp-action="Delete" asp-route-id="@item.Id">Delete</a></button>
+            </td>
+            <td>
+                <button><a asp-action="Edit" asp-route-id="@item.Id">Edit</a></button>
+            </td>
+            <td> 
+                <button><a asp-action="Details" asp-route-id="@item.Id">Details</a></button>
             </td>
         </tr>
 }
     </tbody>
 </table>
+</div>
