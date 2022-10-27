@@ -13,7 +13,7 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+<div class="form-group">
                 <label asp-for="Stud_First" class="control-label"></label>
                 <input asp-for="Stud_First" class="form-control" />
                 <span asp-validation-for="Stud_First" class="text-danger"></span>
@@ -28,14 +28,33 @@
                 <input asp-for="BYUID" class="form-control" />
                 <span asp-validation-for="BYUID" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @* OG*@
+            @*            <div class="form-group">
                 <label asp-for="International" class="control-label"></label>
                 <input asp-for="International" class="form-control" />
+                <option>True</option>
+                <option>False</option>
+                <span asp-validation-for="International" class="text-danger"></span>
+            </div>*@
+            @* OG*@
+            <div class="form-group">
+                <label asp-for="International" class="control-label"></label>
+                <select asp-for="International" class="form-control">
+                <option>Select True or False</option>
+                <option>True</option>
+                <option>False</option>
+                </select>
                 <span asp-validation-for="International" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
+                <select asp-for="Gender" class="form-control">
+                    <option>Select Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -50,7 +69,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Semester" class="control-label"></label>
-                <input asp-for="Semester" class="form-control" />
+                <select asp-for="Semester" class="form-control">
+                    <option>Select Semester</option>
+                    <option>Fall</option>
+                    <option>Winter</option>
+                    <option>Spring</option>
+                    <option>Summer</option>
+                </select>
                 <span asp-validation-for="Semester" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -65,7 +90,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="Position_Type" class="control-label"></label>
-                <input asp-for="Position_Type" class="form-control" />
+                <select asp-for="Position_Type" class="form-control">
+                    <option>Select Position</option>
+                    <option>TA</option>
+                    <option>RA</option>
+                    <option>Office</option>
+                    <option>Student Instructor</option>
+                    <option>Other</option>
+                </select>
                 <span asp-validation-for="Position_Type" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -75,7 +107,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Empl_Record" class="control-label"></label>
-                <input asp-for="Empl_Record" class="form-control" />
+                <select asp-for="Empl_Record" class="form-control">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
                 <span asp-validation-for="Empl_Record" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -110,27 +147,48 @@
             </div>
             <div class="form-group">
                 <label asp-for="Year_In_Program" class="control-label"></label>
-                <input asp-for="Year_In_Program" class="form-control" />
+                <select asp-for="Year_In_Program" class="form-control">
+                    <option>Select Year In Program</option>
+                    <option>MSB Core (IS or other)</option>
+                    <option>MISM</option>
+                    <option>MBA</option>
+                    <option>MPA</option>
+                    <option>Macc</option>
+                    <option>Other majors on campus</option>
+                </select>
                 <span asp-validation-for="Year_In_Program" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Pay_Grad_Tuition" class="control-label"></label>
-                <input asp-for="Pay_Grad_Tuition" class="form-control" />
+                <select asp-for="Pay_Grad_Tuition" class="form-control">
+                    <option></option>
+                    <option>True</option>
+                    <option>False</option>
+                </select>
                 <span asp-validation-for="Pay_Grad_Tuition" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Name_Change_Complete" class="control-label"></label>
-                <input asp-for="Name_Change_Complete" class="form-control" />
+                <select asp-for="Name_Change_Complete" class="form-control">
+                    <option></option>
+                    <option>True</option>
+                    <option>False</option>
+                </select>
                 <span asp-validation-for="Name_Change_Complete" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Notes" class="control-label"></label>
-                <input asp-for="Notes" class="form-control" />
+                <select asp-for="Notes" class="form-control">
+                    <option>None</option>
+                </select>
                 <span asp-validation-for="Notes" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Terminated" class="control-label"></label>
-                <input asp-for="Terminated" class="form-control" />
+                <select asp-for="Terminated" class="form-control">
+                    <option>False</option>
+                    <option>True</option>
+                </select>
                 <span asp-validation-for="Terminated" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -168,7 +226,6 @@
                 <input asp-for="BYU_Name" class="form-control" />
                 <span asp-validation-for="BYU_Name" class="text-danger"></span>
             </div>
-            <br />
             <br />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
