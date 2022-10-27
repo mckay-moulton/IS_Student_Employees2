@@ -5,10 +5,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace IS_Student_Employees2.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+               name: "Employee");
             migrationBuilder.CreateTable(
                 name: "Employee",
                 columns: table => new
@@ -37,7 +39,7 @@ namespace IS_Student_Employees2.Migrations
                     Year_In_Program = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Pay_Grad_Tuition = table.Column<bool>(type: "bit", nullable: true),
                     Name_Change_Complete = table.Column<bool>(type: "bit", nullable: true),
-                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Terminated = table.Column<bool>(type: "bit", nullable: true),
                     Termination_Date = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Qualtrics_Survey_Sent = table.Column<bool>(type: "bit", nullable: true),

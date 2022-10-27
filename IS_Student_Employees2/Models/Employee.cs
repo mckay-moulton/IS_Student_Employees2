@@ -11,7 +11,7 @@ namespace IS_Student_Employees2.Models
         public string Stud_Last { get; set; }
         [Display(Name = "BYU ID")]
         public string? BYUID { get; set; }
-        public bool? International { get; set; }
+        public bool? International { get; set; } = false;
         public string? Gender { get; set; }
         public string? Email { get; set; }
         [Display(Name = "Expected Hours")]
@@ -46,7 +46,7 @@ namespace IS_Student_Employees2.Models
         public bool? Pay_Grad_Tuition { get; set; }
         [Display(Name = "Name Change Complete")]
         public bool? Name_Change_Complete { get; set; }
-        public string Notes { get; set; }
+        public string? Notes { get; set; } = "None";
         public bool? Terminated { get; set; }
         [DataType(DataType.Date)]
         [Display(Name = "Termination Date")]

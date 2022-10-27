@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IS_Student_Employees2.Migrations
 {
     [DbContext(typeof(IS_Student_Employees2Context))]
-    [Migration("20221023035641_Initial")]
-    partial class Initial
+    [Migration("20221027202408_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,7 +78,6 @@ namespace IS_Student_Employees2.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Notes")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("Pay_Grad_Tuition")

@@ -76,7 +76,6 @@ namespace IS_Student_Employees2.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Notes")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("Pay_Grad_Tuition")
