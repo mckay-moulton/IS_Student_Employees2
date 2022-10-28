@@ -30,16 +30,17 @@ namespace IS_Student_Employees2.Controllers
 
         public async Task<IActionResult> Index(string searchString)
         {
-            var employees = from m in _context.Employee
-                         select m;
-            //_context.Employee.OrderByDescending(s => s.Year).ThenBy(s => s.Semester).
+            //order by year and semester
+            var employees = from m in _context.Employee.OrderByDescending(s => s.Year).ThenBy(s => s.Semester)
+                            select m;
+            //var employees = _context.Employee.OrderByDescending(s => s.Year).ThenBy(s => s.Semester)
 
             //if the search bar is not empty, perform LINQ Filter, redirecting to same Index Page
             //First filter is for last name
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                employees = employees.Where(s => s.Stud_Last!.Contains(searchString)); 
+                employees = employees.Where(s => s.Stud_Last!.Contains(searchString)).OrderByDescending(s => s.Year).ThenBy(s => s.Semester); 
             }
 
             return View(await employees.ToListAsync());
@@ -48,14 +49,14 @@ namespace IS_Student_Employees2.Controllers
         //Create Suervisor View based off of INDEX
         public async Task<IActionResult> SupervisorView(string searchString)
         {
-            var employees = from m in _context.Employee
+            var employees = from m in _context.Employee.OrderByDescending(s => s.Year).ThenBy(s => s.Semester)
                             select m;
             //if the search bar is not empty, perform LINQ Filter, redirecting to same Index Page
             //First filter is for last name
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                employees = employees.Where(s => s.Supervisor!.Contains(searchString));
+                employees = employees.Where(s => s.Supervisor!.Contains(searchString)).OrderByDescending(s => s.Year).ThenBy(s => s.Semester);
             }
 
             return View(await employees.ToListAsync());
