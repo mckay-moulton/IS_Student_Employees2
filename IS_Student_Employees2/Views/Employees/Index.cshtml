@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="text-center">All Student Employees</h1>
 
 <p>
     <button class="button-7"><a asp-action="Create" class="text-white GFG">Create New</a></button>
@@ -13,6 +13,13 @@
 <form asp-controller="Employees" asp-action="Index" method="get">
     <p>
         Last Name: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<form asp-controller="Employees" asp-action="SupervisorView" method="get">
+    <p>
+        Supervisor: <input type="text" name="SearchString" />
         <input type="submit" value="Filter" />
     </p>
 </form>

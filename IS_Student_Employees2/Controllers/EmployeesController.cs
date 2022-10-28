@@ -19,27 +19,46 @@ namespace IS_Student_Employees2.Controllers
             _context = context;
         }
 
-        // GET: Employees
-        //Index w/Search 
-        public async Task<IActionResult> Index(string searchString)
-        {
-            var employees = from m in _context.Employee
-                         select m;
-            //if the search bar is not empty, perform LINQ Filter, redirecting to same Index Page
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                employees = employees.Where(s => s.Stud_Last!.Contains(searchString)); 
-            }
-            
-            return View(await employees.ToListAsync());
-        }
-        //OG Index 
+    //OG Index 
         //public async Task<IActionResult> Index()
         //{
 
         //      return View(await _context.Employee.ToListAsync());
         //}
+        // GET: Employees
+        //Index w/Search 
+
+        public async Task<IActionResult> Index(string searchString)
+        {
+            var employees = from m in _context.Employee
+                         select m;
+            //if the search bar is not empty, perform LINQ Filter, redirecting to same Index Page
+            //First filter is for last name
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                employees = employees.Where(s => s.Stud_Last!.Contains(searchString)); 
+            }
+
+            return View(await employees.ToListAsync());
+        }
+
+        //Create Suervisor View based off of INDEX
+        public async Task<IActionResult> SupervisorView(string searchString)
+        {
+            var employees = from m in _context.Employee
+                            select m;
+            //if the search bar is not empty, perform LINQ Filter, redirecting to same Index Page
+            //First filter is for last name
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                employees = employees.Where(s => s.Supervisor!.Contains(searchString));
+            }
+
+            return View(await employees.ToListAsync());
+        }
+
 
         // Employees Details 
         public async Task<IActionResult> Details(int? id)

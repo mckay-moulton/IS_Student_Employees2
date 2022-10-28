@@ -5,9 +5,9 @@ namespace IS_Student_Employees2.Models
     public class Employee
     {
         public int Id { get; set; }
-        [Display(Name = "First Name")]
+        [Display(Name = "First")]
         public string Stud_First { get; set; }
-        [Display(Name = "Last Name")]
+        [Display(Name = "Last")]
         public string Stud_Last { get; set; }
         [Display(Name = "BYU ID")]
         public string? BYUID { get; set; }
@@ -61,7 +61,7 @@ namespace IS_Student_Employees2.Models
         [Display(Name = "Authorized To Work Received")]
         public bool? Authorization_To_Work_Received { get; set; }
         [DataType(DataType.Date)]
-        [Display(Name = "Authorized to Work Email Sent Date")]
+        [Display(Name = "Auth. Email Sent Date")]
         public DateTime? Authorization_To_Work_Email_Sent_Date { get; set; }
         [Display(Name = "BYU Name")]
         public string? BYU_Name { get; set; }
