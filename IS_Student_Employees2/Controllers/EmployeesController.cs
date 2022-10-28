@@ -32,6 +32,8 @@ namespace IS_Student_Employees2.Controllers
         {
             var employees = from m in _context.Employee
                          select m;
+            //_context.Employee.OrderByDescending(s => s.Year).ThenBy(s => s.Semester).
+
             //if the search bar is not empty, perform LINQ Filter, redirecting to same Index Page
             //First filter is for last name
 

@@ -29,6 +29,13 @@ namespace IS_Student_Employees2.Controllers
                 ToList();
             return View(ta);
         }
-
+        //testing order by year, group by semester
+        public IActionResult test()
+        {
+            var q = _context.Employee.OrderByDescending(s => s.Year).ThenBy(s => s.Semester).
+                //GroupBy(s => s.Semester).
+                ToList();
+            return View(q);
+        }
     }
 }

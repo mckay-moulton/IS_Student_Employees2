@@ -1,0 +1,11 @@
+﻿@*
+    ViewData["Title"] = "test";
+*@
+@model List<Employee>
+
+@{
+}
+@foreach (var item in Model)
+{
+    <p>Name: @Html.DisplayFor(modelItem => item.Stud_First) Year: @Html.DisplayFor(modelItem => item.Year) Semester: @Html.DisplayFor(modelItem => item.Semester)</p>
+}
