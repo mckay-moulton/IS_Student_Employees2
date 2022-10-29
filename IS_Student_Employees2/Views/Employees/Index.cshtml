@@ -3,11 +3,11 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<br />
 <h1 class="text-center">All Student Employees</h1>
 
 <p>
-    <button class="button-7"><a asp-action="Create" class="text-white GFG">Create New</a></button>
+    <a asp-action="Create">Create New</a>
 </p>
 
 @*Search feature by last name (using Index page)*@
@@ -34,8 +34,7 @@
     </p>
 </form>
 
-<div class="text-center">
-<table class="table table-bordered table-striped">
+    <table class="table">
     <thead>
         <tr>
             <th>
@@ -245,4 +244,3 @@
 }
     </tbody>
 </table>
-</div>
