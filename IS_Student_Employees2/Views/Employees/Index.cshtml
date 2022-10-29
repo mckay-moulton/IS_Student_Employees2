@@ -10,6 +10,7 @@
     <button class="button-7"><a asp-action="Create" class="text-white GFG">Create New</a></button>
 </p>
 
+@*Search feature by last name (using Index page)*@
 <form asp-controller="Employees" asp-action="Index" method="get">
     <p>
         Last Name: <input type="text" name="SearchString" />
@@ -17,9 +18,18 @@
     </p>
 </form>
 
+@*Search feature by Supervisor (using Supervisor Page)*@
+
 <form asp-controller="Employees" asp-action="SupervisorView" method="get">
     <p>
         Supervisor: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<form asp-controller="Employees" asp-action="YearView" method="get">
+    <p>
+        Year: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" name="SearchString" />
         <input type="submit" value="Filter" />
     </p>
 </form>

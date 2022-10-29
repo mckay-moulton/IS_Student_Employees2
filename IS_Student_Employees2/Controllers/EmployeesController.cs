@@ -46,7 +46,7 @@ namespace IS_Student_Employees2.Controllers
             return View(await employees.ToListAsync());
         }
 
-        //Create Suervisor View based off of INDEX
+        //Create Supervisor View based off of INDEX
         public async Task<IActionResult> SupervisorView(string searchString)
         {
             var employees = from m in _context.Employee.OrderByDescending(s => s.Year).ThenBy(s => s.Semester)
@@ -58,6 +58,25 @@ namespace IS_Student_Employees2.Controllers
             {
                 employees = employees.Where(s => s.Supervisor!.Contains(searchString)).OrderByDescending(s => s.Year).ThenBy(s => s.Semester);
             }
+
+            return View(await employees.ToListAsync());
+        }
+
+        //Create Year View filter View
+        public async Task<IActionResult> YearView(int searchString)
+        {
+            var employees = from m in _context.Employee.OrderByDescending(s => s.Year).ThenBy(s => s.Semester)
+                            select m;
+            //if the search bar is not empty, perform LINQ Filter, redirecting to same Index Page
+            //First filter is for last name
+
+
+            if (searchString != 0 )
+            {
+                employees = employees.Where(s => s.Year == searchString).OrderByDescending(s => s.Year).ThenBy(s => s.Semester);
+            }
+
+
 
             return View(await employees.ToListAsync());
         }
