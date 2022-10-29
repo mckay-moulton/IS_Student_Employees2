@@ -4,10 +4,10 @@
 @model IEnumerable<IS_Student_Employees2.Models.Employee>
 
 @{
-    ViewData["Title"] = "Current TAs";
+    ViewData["Title"] = "Current RAs";
 }
 <br />
-<h1 class="text-center">Current TAs</h1>
+<h1 class="text-center">Current RA's</h1>
 @*<p>
     <button class="btn btn-primary"><a asp-action="Create">Create New</a></button>
 </p>*@
@@ -26,9 +26,9 @@
         Supervisor: <input type="text" name="SearchString" />
         <input type="submit" value="Filter" />
     </p>
-</form>*@
+</form>
 
-@*<form asp-controller="Employees" asp-action="YearView" method="get">
+<form asp-controller="Employees" asp-action="YearView" method="get">
     <p>
         Year: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" name="SearchString" />
         <input type="submit" value="Filter" />

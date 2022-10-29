@@ -23,9 +23,17 @@ namespace IS_Student_Employees2.Controllers
         {
             return View();
         }
+        //Only return current TA's
         public IActionResult TAs()
         {
-            var ta = _context.Employee.Where(s => s.Position_Type == "TA").
+            var ta = _context.Employee.Where(s => s.Position_Type == "TA" && s.Terminated == false).
+                ToList();
+            return View(ta);
+        }
+        //Only return current RA's
+        public IActionResult RAs()
+        {
+            var ta = _context.Employee.Where(s => s.Position_Type == "RA" && s.Terminated == false).
                 ToList();
             return View(ta);
         }
